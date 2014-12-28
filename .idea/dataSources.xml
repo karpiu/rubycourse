@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2280510775">
+    <data-source source="LOCAL" name="Rails rubycourse: development" uuid="d530162a-705f-46ba-851d-356ad7f15c0e">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/ruby_course_development</jdbc-url>
+      <user-name>ruby_course_admin</user-name>
+      <user-password>dfd8dfdfdfc8dfd3dff5dfc9dfc5dfdfdfd8dfd9dfcfdff5dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails rubycourse: test" uuid="d33e5e93-a531-44a9-94a4-29016184d3c5">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/ruby_course_test</jdbc-url>
+      <user-name>ruby_course_admin</user-name>
+      <user-password>dfd8dfdfdfc8dfd3dff5dfc9dfc5dfdfdfd8dfd9dfcfdff5dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails rubycourse: production" uuid="f343aee2-1c66-4d53-ad9b-c1f926a7e1cd">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/ruby_course_production</jdbc-url>
+      <user-name>ruby_course_admin</user-name>
+      <user-password>dfd8dfdfdfc8dfd3dff5dfc9dfc5dfdfdfd8dfd9dfcfdff5dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

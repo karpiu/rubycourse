@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141228133937) do
+ActiveRecord::Schema.define(version: 20141230155732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,17 @@ ActiveRecord::Schema.define(version: 20141228133937) do
 
 # Could not dump table "semestr" because of following StandardError
 #   Unknown type 'semestry' for column 'semestr'
+
+  create_table "student_tasks", force: true do |t|
+    t.integer  "student_id"
+    t.integer  "task_id"
+    t.integer  "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "student_tasks", ["student_id"], name: "index_student_tasks_on_student_id", using: :btree
+  add_index "student_tasks", ["task_id"], name: "index_student_tasks_on_task_id", using: :btree
 
   create_table "students", force: true do |t|
     t.string   "name"

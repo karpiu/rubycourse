@@ -1,1 +1,34 @@
-Blablabla
+<h1>Ruby Course rank</h1>
+
+<table>
+
+  <thead>
+    <tr>
+      <th>Milestones</th>
+      <% @milestones.each do |milestone| %>
+          <th colspan=<%= milestone.tasks.size %>><%= milestone.title %></th>
+      <% end %>
+    </tr>
+    <tr>
+      <th>Tasks</th>
+      <% @tasks.each do |task| %>
+        <th><%= task.title %></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+    <tr>
+      <td><%= student.github_login %></td>
+      <% @tasks.each do |task| %>
+          <% student_task = @student_tasks.find { |st| st.student == student && st.task == task } %>
+          <td>
+            <%= student_task.nil? ? "-" : student_task.state %>
+          </td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>

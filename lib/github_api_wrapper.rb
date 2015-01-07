@@ -13,7 +13,7 @@ class GithubApiWrapper
     if issue.assignee.nil?
       return "free"
     else
-      return "work_in_progress"
+      return "wip"
     end
   end
 end

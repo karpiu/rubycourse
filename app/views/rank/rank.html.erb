@@ -1,3 +1,5 @@
+<% require 'github_helper' %>
+
 <h1>Ruby Course rank</h1>
 
 <table>
@@ -24,7 +26,13 @@
       <% @tasks.each do |task| %>
           <% student_task = student.student_tasks.find { |st| st.task == task } %>
           <td>
-            <%= student_task.nil? ? "-" : student_task.state %>
+            <% if !student_task.nil? %>
+                <a href=<%= GithubHelper.get_issue_url(student, task, REPO_NAME) %> target="_blank">
+                  <%= student_task.state %>
+                </a>
+            <% else %>
+                -
+            <% end %>
           </td>
       <% end %>
     </tr>

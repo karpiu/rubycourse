@@ -1,4 +1,5 @@
-class GithubApiWrapper
+class GithubHelper
+
   def self.check_issue_state(student, task, repo_name)
     issue = Octokit.issue(student.github_login + "/" + repo_name, task.number)
     if "closed".equal? issue.state
@@ -15,5 +16,9 @@ class GithubApiWrapper
     else
       return "wip"
     end
+  end
+
+  def self.get_issue_url(student, task, repo_name)
+    "https://github.com/#{student.github_login}/#{repo_name}/issues/#{task.number}"
   end
 end

@@ -22,12 +22,11 @@
     <tr>
       <td><%= student.github_login %></td>
       <% @tasks.each do |task| %>
-          <% student_task = @student_tasks.find { |st| st.student == student && st.task == task } %>
+          <% student_task = student.student_tasks.find { |st| st.task == task } %>
           <td>
             <%= student_task.nil? ? "-" : student_task.state %>
           </td>
       <% end %>
-    </tr>
     <% end %>
   </tbody>
 

@@ -1,3 +1,64 @@
 // Place all the styles related to the Rank controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+#header {
+  border-bottom: 2px solid black;
+}
+
+table {
+  table-layout: fixed;
+  border: 2px solid black;
+  padding: 4px;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+th {
+  border: 1px solid black;
+}
+
+td {
+  text-align: center;
+  min-width: 60px;
+  padding: 2px;
+  border: 1px solid black;
+}
+
+td a {
+  color: inherit;
+  text-decoration: none;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+td.accepted{
+  background-color: #165f02;
+  color: white;
+}
+
+td.done {
+  background-color: #47ba4b;
+  color: black;
+}
+
+td.rejected {
+  background-color: #cd482a;
+  color: white;
+}
+
+td.wip {
+  background-color: #576B7C;
+  color: white;
+}
+
+td.free {
+  background-color: #DEC561;
+  color: black;
+}

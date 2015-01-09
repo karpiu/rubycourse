@@ -1,6 +1,10 @@
 <% require 'github_helper' %>
 
-<h1>Ruby Course rank</h1>
+<div id="header">
+  Ruby Course Rank
+</div>
+
+<br/>
 <%= button_to "Refresh table", action: "refresh" %>
 
 <table>
@@ -15,7 +19,7 @@
     <tr>
       <th>Tasks</th>
       <% @tasks.each do |task| %>
-        <th><%= task.title %></th>
+        <th><%= task.number %></th>
       <% end %>
     </tr>
   </thead>
@@ -26,15 +30,15 @@
       <td><%= student.github_login %></td>
       <% @tasks.each do |task| %>
           <% student_task = student.student_tasks.find { |st| st.task == task } %>
-          <td>
             <% if !student_task.nil? %>
+              <td class=<%= student_task.state %>>
                 <a href=<%= GithubHelper.get_issue_url(student, task, REPO_NAME) %> target="_blank">
                   <%= student_task.state %>
                 </a>
+              </td>
             <% else %>
-                -
+                <td></td>
             <% end %>
-          </td>
       <% end %>
     </tr>
     <% end %>

@@ -1,8 +1,8 @@
 class GithubHelper
 
-  def self.check_issue_state(student, task, repo_name)
+  def self.check_issue_state(student, task, repo_name, admin_login)
     issue = Octokit.issue(student.github_login + "/" + repo_name, task.number)
-    if "closed" == issue.state
+    if "closed" == issue.state && admin_login == issue.closed_by.login
       return "accepted"
     end
     if issue.labels.find { |label| "rejected" == label.name.downcase }

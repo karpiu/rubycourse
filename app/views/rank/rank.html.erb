@@ -1,11 +1,6 @@
 <% require 'github_helper' %>
 
-<div id="header">
-  Ruby Course Rank
-</div>
-
-<br/>
-<%= button_to "Refresh table", action: "refresh" %>
+<%= button_to "Refresh table", { action: "refresh" }, { class: "refresh_button" } %>
 
 <table>
 

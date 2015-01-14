@@ -2,17 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  font-family: Verdana, Geneva, sans-serif;
-}
-
-#header {
-  border-bottom: 2px solid black;
-}
-
 table {
   table-layout: fixed;
-  border: 2px solid black;
+  border: 1px solid black;
   padding: 4px;
   border-spacing: 0px;
   border-collapse: collapse;
@@ -20,13 +12,14 @@ table {
 
 th {
   border: 1px solid black;
+  padding: 2px 4px;
 }
 
 td {
   text-align: center;
   min-width: 60px;
   padding: 2px;
-  border: 1px solid black;
+  border: 1px solid black
 }
 
 td a {
@@ -61,4 +54,12 @@ td.wip {
 td.free {
   background-color: #DEC561;
   color: black;
+}
+
+.refresh_button {
+  width: 300px;
+  height: 32px;
+  padding: 0px;
+  margin: 4px;
+  font: inherit;
 }

@@ -1,6 +1,8 @@
 <% require 'github_helper' %>
 
-<%= button_to "Refresh table", { action: "refresh" }, { class: "refresh_button" } %>
+<% if current_user %>
+    <%= button_to "Refresh table", { action: "refresh" }, { class: "refresh_button" } %>
+<% end %>
 
 <table>
 
@@ -10,6 +12,7 @@
       <% @milestones.each do |milestone| %>
           <th colspan=<%= milestone.tasks.size %>><%= milestone.title %></th>
       <% end %>
+      <th rowspan="2">Points</th>
     </tr>
     <tr>
       <th>Tasks</th>
@@ -35,6 +38,7 @@
                 <td></td>
             <% end %>
       <% end %>
+      <td><%= student.points %></td>
     </tr>
     <% end %>
   </tbody>

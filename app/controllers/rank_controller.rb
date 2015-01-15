@@ -1,4 +1,6 @@
 class RankController < ApplicationController
+  before_filter :authenticate_user!, only: [:refresh]
+
   def rank
     @students = Student.order('id ASC')
     @milestones = Milestone.order('number ASC')

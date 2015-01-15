@@ -1,0 +1,2 @@
+class NonAdminLoginError < StandardError
+end

@@ -9,7 +9,15 @@
 <body>
 
 <div id="header">
-  Ruby Course Rank
+  <span class="left">Ruby Course Rank</span>
+  <span class="right">
+    <% if current_user %>
+        <%= "Logged in as #{current_user.login} | " %>
+        <%= link_to "Sign out", "/signout" %>
+    <% else %>
+        <%= link_to "Sign in with Github", "/auth/github" %>
+    <% end %>
+  </span>
 </div>
 
 <div id="main">
@@ -17,7 +25,9 @@
 </div>
 
 <div id="footer">
-  The rank refresh is triggered manually by course admin - some task states may not be up to date.
+  <span class="left">
+    The rank refresh is triggered manually by course admin - some task states may not be up to date.
+  </span>
 </div>
 
 </body>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107154930) do
+ActiveRecord::Schema.define(version: 20150115004135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,14 @@ ActiveRecord::Schema.define(version: 20150107154930) do
   end
 
   add_index "tasks", ["milestone_id"], name: "index_tasks_on_milestone_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "login"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "uzytkownik", primary_key: "kod_uz", force: true do |t|
     t.string  "imie",     limit: 15, null: false

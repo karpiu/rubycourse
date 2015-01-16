@@ -1,6 +1,6 @@
-= README
+# README
 
-== CONFIGURATION INSTRUCTIONS
+## CONFIGURATION INSTRUCTIONS
 
 1. Set course repo name and admin github login in `config/initializers/course_config.rb`
 2. To enable login with github, register an application here before deploying: https://github.com/settings/applications/new

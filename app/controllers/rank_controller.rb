@@ -10,19 +10,25 @@ class RankController < ApplicationController
   def refresh
     @students = Student.all
     @tasks = Task.all
+    @student_tasks = StudentTask.all
+    threads = []
     @students.each do |student|
       @tasks.each do |task|
-        student_task = student.student_tasks.find { |st| st.task == task }
+        student_task = @student_tasks.find { |st| st.task == task && st.student == student }
         if student_task.nil?
           student_task = StudentTask.new
           student_task.student = student
           student_task.task = task
+          @student_tasks << student_task
         end
-        student_task.state = GithubHelper.check_issue_state(student, task, REPO_NAME, ADMIN_GITHUB_LOGIN)
-        student_task.save!
+        threads << Thread.new {
+          student_task.state = GithubHelper.check_issue_state(student, task, REPO_NAME, ADMIN_GITHUB_LOGIN)
+        }
       end
     end
 
+    threads.each &:join
+    @student_tasks.each &:save!
     redirect_to root_path
   end
 end

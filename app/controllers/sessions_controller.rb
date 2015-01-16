@@ -1,3 +1,5 @@
+require 'github_helper'
+
 class SessionsController < ApplicationController
 
   def create
@@ -5,6 +7,7 @@ class SessionsController < ApplicationController
       auth = request.env["omniauth.auth"]
       user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
       session[:user_id] = user.id
+      GithubHelper.set_access_token(auth["credentials"]["token"])
       redirect_to root_url, :notice => "Signed in!"
     rescue NonAdminLoginError
       session[:user_id] = nil

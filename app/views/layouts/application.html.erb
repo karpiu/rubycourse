@@ -12,7 +12,7 @@
   <span class="left">Ruby Course Rank</span>
   <span class="right">
     <% flash.each do |key, value| %>
-        <span class="flash"><%= value%></span> | 
+        <span class="flash"><%= value%></span> <%= " | " %>
     <% end %>
     <% if current_user %>
         <%= "Logged in as #{current_user.login} | " %>

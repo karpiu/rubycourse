@@ -11,17 +11,20 @@
 <div id="header">
   <span class="left">Ruby Course Rank</span>
   <span class="right">
+    <% flash.each do |key, value| %>
+        <span class="flash"><%= value%></span> | 
+    <% end %>
     <% if current_user %>
         <%= "Logged in as #{current_user.login} | " %>
         <%= link_to "Sign out", "/signout" %>
     <% else %>
-        <%= button_to "Sign in with Github (admin only)", "/auth/github",  { :method => :get, :class => "github_button" } %>
+        <%= link_to "Sign in with Github (admin only)", "/auth/github",  { :method => :get } %>
     <% end %>
   </span>
 </div>
 
 <div id="main">
-    <%= yield %>
+  <%= yield %>
 </div>
 
 <div id="footer">
